@@ -11,7 +11,7 @@ import './index.css';
 
 function App() {
   const [showApiKey, setShowApiKey] = useState(false);
-  const [apiReady, setApiReady] = useState(false);
+  const [apiReady, setApiReady] = useState(true);
   const [activeAgent, setActiveAgent] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -136,14 +136,6 @@ function App() {
           <p className="footer-sub">Smart ordering for everyone · Food · Groceries · Dining</p>
         </div>
       </footer>
-
-      {/* Modals */}
-      {showApiKey && (
-        <ApiKeyModal
-          onSave={handleSaveApiKey}
-          onClose={() => setShowApiKey(false)}
-        />
-      )}
 
       {activeAgent && (
         <AgentModal
