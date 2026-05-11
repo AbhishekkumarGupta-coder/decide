@@ -18,7 +18,7 @@ export default function ResultDisplay({ result, agent, rawData }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           query: rawData?.dish || rawData?.meal || rawData?.decision || 'biryani',
-          budget: parseInt(rawData?.price_estimate?.replace('₹', '')) || 300,
+          budget: 500,
         }),
       });
       const data = await response.json();
